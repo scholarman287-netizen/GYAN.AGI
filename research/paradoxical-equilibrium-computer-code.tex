@@ -1,0 +1,1906 @@
+% Compile with XeLaTeX (recommended): xelatex "FILE.tex"
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setmonofont{Noto Sans Mono}[Scale=MatchLowercase]
+\usepackage{fvextra}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{titlesec}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\DefineVerbatimEnvironment{ManuscriptText}{Verbatim}{breaklines,breakanywhere,fontsize=\scriptsize}
+\lstdefinestyle{mishrincode}{
+  basicstyle=\ttfamily\scriptsize,
+  breaklines=true,
+  breakatwhitespace=false,
+  keepspaces=true,
+  columns=fullflexible,
+  showstringspaces=false,
+  frame=single,
+  rulecolor=\color{black!25},
+  numbers=left,
+  numberstyle=\tiny\color{black!55},
+  tabsize=2
+}
+\lstset{style=mishrincode}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\title{Paradoxical Equilibrium Computer Code: Computational Formalization and Mishrin Paradoxical Computer}
+\author{Aman Mishra}
+\date{November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+This document combines two related materials: (1) a machine-readable transcription of the supplied computational formalization paper, \texttt{mishrin\_paradoxical\_equilibrium\_theory.pdf}; and (2) source listings from the Mishrin Paradoxical Computer research-orchestrator MVP. The paper transcription is reconstructed from the supplied PDF and is not the original authoring source. The JavaScript and configuration listings are taken from the project archive. The code is a research-orchestration starting point, not a validated autonomous scientist and not proof of Paradoxical Equilibrium.
+\end{abstract}
+\tableofcontents
+\clearpage
+\section{Computational PE manuscript (PDF-reconstructed transcription)}
+The following text is recovered from the supplied computational manuscript. It is retained for AI-readable reference; the original PDF is included in the bundle for visual comparison.
+\begin{ManuscriptText}
+Mishrin Paradoxical Equilibrium Theory
+ A Mathematical Framework for Sustainable Optimization in Intelligent
+                            and Computational Systems
+
+                                      Aman Mishra
+
+                                     November 2026
+
+
+                                          Abstract
+
+        Modern computational and intelligent systems face competing objectives, in-
+     cluding computational efficiency, operational stability, task accuracy, resource con-
+     servation, adaptability, and information preservation.
+        Conventional optimization approaches frequently prioritize one measurable ob-
+     jective at the expense of other critical system properties.
+        This paper proposes the Mishrin Paradoxical Equilibrium Theory (MPET),
+     a conceptual and mathematical framework for reconciling competing objectives
+     through adaptive, constraint-aware optimization.
+        The central proposition is that maximum sustainable system performance does
+     not necessarily arise from maximizing individual resource utilization or any single
+     performance metric. Instead, it emerges from balancing interconnected objectives
+     while preserving the system’s essential purpose and operational stability.
+        The framework introduces a multi-objective utility function, a resource-constrained
+     optimization model, an adaptive equilibrium condition, and a Lyapunov-based sta-
+     bility requirement.
+        The theory is intended as a foundation for designing resource-efficient artificial
+     intelligence systems, autonomous computational agents, adaptive software archi-
+     tectures, and other systems operating under finite resources.
+        This paper presents a proposed formalization. Its mathematical properties are
+     established only under explicitly stated assumptions, and its practical effectiveness
+     requires experimental validation.
+
+Keywords: Paradoxical Equilibrium, Mishrin, Artificial Intelligence, Multi-Objective
+Optimization, Computational Efficiency, System Stability, Resource Allocation, Adaptive
+Systems, Autonomous Computing.
+
+
+Contents
+1 Introduction                                                                          4
+  1.1 Background . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    4
+  1.2 The Fundamental Idea . . . . . . . . . . . . . . . . . . . . . . . . . . . .      4
+  1.3 Research Objectives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
+
+2 Foundational Principles                                                               5
+
+3 Mathematical Foundations                                                               5
+  3.1 System Representation . . . . . . . . . . . . . . . . . . . . . . . . . . . .      5
+  3.2 Performance Dimensions . . . . . . . . . . . . . . . . . . . . . . . . . . .       6
+  3.3 Computational Efficiency . . . . . . . . . . . . . . . . . . . . . . . . . . .     7
+
+4 The Paradoxical Equilibrium Function                                                   7
+  4.1 Multi-Objective Utility . . . . . . . . . . . . . . . . . . . . . . . . . . . .    7
+  4.2 Equilibrium Penalty . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      8
+  4.3 The Paradoxical Equilibrium Condition . . . . . . . . . . . . . . . . . . .        8
+
+5 Resource-Constrained Optimization                                                      9
+  5.1 Resource Constraints . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     9
+  5.2 Why Maximum Utilization Is Not the Objective . . . . . . . . . . . . . .           9
+  5.3 Constrained Optimization Problem . . . . . . . . . . . . . . . . . . . . .        10
+
+6 Dynamic Equilibrium and Adaptation                                                    10
+  6.1 Why Equilibrium Must Be Dynamic . . . . . . . . . . . . . . . . . . . .           10
+  6.2 Adaptive Control Policy . . . . . . . . . . . . . . . . . . . . . . . . . . .     10
+  6.3 Equilibrium Error . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   11
+
+7 Stability and Self-Correction                                                         11
+  7.1 Stability Requirement . . . . . . . . . . . . . . . . . . . . . . . . . . . .     11
+  7.2 Self-Correction Mechanism . . . . . . . . . . . . . . . . . . . . . . . . . .     12
+  7.3 Stability Before Aggressive Optimization . . . . . . . . . . . . . . . . . .      12
+
+8 Information and Context Preservation                                                  12
+  8.1 The Compression Problem . . . . . . . . . . . . . . . . . . . . . . . . . .       12
+  8.2 Context Preservation Objective . . . . . . . . . . . . . . . . . . . . . . .      13
+  8.3 Purpose-Preserving Compression . . . . . . . . . . . . . . . . . . . . . .        13
+
+9 Formal Properties                                                                     14
+  9.1 Existence of an Optimal Operating Point . . . . . . . . . . . . . . . . . .       14
+  9.2 Monotonicity of the Utility Function . . . . . . . . . . . . . . . . . . . .      14
+
+
+   9.3   Interpretation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   15
+
+10 Computational Architecture                                                               15
+   10.1 Monitoring Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      15
+   10.2 Evaluation Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      15
+   10.3 Optimization Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      15
+   10.4 Control Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     15
+   10.5 Verification Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    16
+
+11 Proposed Algorithm                                                                       16
+
+12 Application to Mishrin AI                                                                17
+   12.1 Practical Motivation . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      17
+   12.2 Example Optimization Decisions . . . . . . . . . . . . . . . . . . . . . . .        18
+   12.3 Implementation Principle . . . . . . . . . . . . . . . . . . . . . . . . . . .      18
+
+13 Experimental Validation                                                                  18
+   13.1 Research Hypothesis . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       18
+   13.2 Experimental Groups . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       19
+   13.3 Evaluation Metrics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      19
+   13.4 Validation Criteria . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     19
+
+14 Limitations and Future Research                                                          20
+
+15 Conclusion                                                                               20
+
+
+1     Introduction
+1.1     Background
+Intelligent systems operate under multiple competing requirements.
+    For example, an artificial intelligence system may need to:
+
+    • Maximize computational efficiency.
+
+    • Preserve accuracy and task fidelity.
+
+    • Minimize memory and processing consumption.
+
+    • Maintain operational stability.
+
+    • Preserve relevant contextual information.
+
+    • Adapt to changing environmental conditions.
+
+    These objectives are interconnected and may conflict.
+    Increasing computational utilization may improve throughput but reduce the available
+safety margin.
+    Reducing memory consumption may improve deployment efficiency but can also re-
+duce the amount of contextual information available to a model.
+    Increasing autonomy may improve responsiveness but may increase the risk of uncon-
+trolled decisions.
+    The central problem is therefore not merely optimization. It is the reconciliation of
+competing optimization objectives.
+
+
+1.2     The Fundamental Idea
+The Mishrin Paradoxical Equilibrium Theory proposes:
+
+      A system should approach its maximum sustainable useful performance by
+      continuously balancing competing objectives, rather than maximizing any sin-
+      gle objective independently.
+
+    The word “paradoxical” describes the coexistence of seemingly opposing requirements.
+    Efficiency and resource conservation, autonomy and control, compression and informa-
+tion preservation, and performance and stability are not necessarily mutually exclusive.
+    The framework seeks an operational equilibrium among them.
+
+
+1.3     Research Objectives
+This paper develops the following objectives:
+
+    1. Define paradoxical equilibrium mathematically.
+
+    2. Establish a multi-objective optimization framework.
+
+    3. Formalize sustainable computational efficiency.
+
+    4. Introduce resource and stability constraints.
+
+    5. Develop an adaptive feedback mechanism.
+
+    6. Identify conditions under which equilibrium exists.
+
+    7. Propose an experimental methodology for validation.
+
+
+2     Foundational Principles
+The proposed framework is based on five foundational principles.
+
+Principle 2.1 (Multi-Objective Optimization). A system must be evaluated across mul-
+tiple interconnected performance dimensions rather than through a single metric.
+
+Principle 2.2 (Sustainable Efficiency). Resource utilization should be maximized only to
+the extent that the system can preserve reliable operation.
+
+Principle 2.3 (Adaptive Equilibrium). The optimal operating condition is dynamic and
+may change with workloads, available resources, and environmental conditions.
+
+Principle 2.4 (Purpose Preservation). Optimization must not destroy or materially un-
+dermine the primary function of the system.
+
+Principle 2.5 (Continuous Self-Correction). The system should monitor performance,
+identify imbalances, and adjust its operating policy through feedback.
+
+
+3     Mathematical Foundations
+3.1     System Representation
+Let an intelligent computational system be represented by:
+
+                                     S = (X, U, W, F )
+
+    where:
+
+
+  • X is the system state space.
+
+  • U is the set of admissible control actions.
+
+  • W represents external disturbances.
+
+  • F represents the system transition function.
+   The system evolves according to:
+
+                                   xt+1 = F (xt , ut , wt )
+
+   where:
+  • xt is the system state at time t.
+
+  • ut is the selected control action.
+
+  • wt represents external disturbances.
+    The purpose of the control mechanism is to maintain high useful performance while
+satisfying operational constraints.
+
+
+3.2   Performance Dimensions
+Define the normalized performance vector as:
+                                               ⎡    ⎤
+                                               Q
+                                              ⎢ t⎥
+                                              ⎢ Ft ⎥
+                                              ⎢ ⎥
+                                              ⎢ ⎥
+                                         mt = ⎢
+                                              ⎢ Ct ⎥
+                                                   ⎥
+                                              ⎢ ⎥
+                                              ⎢ St ⎥
+                                              ⎢ ⎥
+                                              ⎣ ⎦
+                                                Et
+   where:
+  • Qt : Task quality.
+
+  • Ft : Task fidelity.
+
+  • Ct : Relevant context preservation.
+
+  • St : Operational stability.
+
+  • Et : Computational efficiency.
+   For this formulation, each metric is normalized to:
+
+                                         0 ≤ mi,t ≤ 1
+
+   A value closer to one represents stronger performance on the corresponding dimension.
+
+
+3.3     Computational Efficiency
+Define computational efficiency as:
+
+                                             Wtuseful
+                                   Et =            ∑︁n
+                                          ε + j=1 αj Rj,t
+    where:
+
+    • Wtuseful is useful computational work.
+
+    • Rj,t is the consumption of resource j.
+
+    • αj is the resource weighting coefficient.
+
+    • ε > 0 prevents division by zero.
+
+    The resource vector may include:
+                                               ⎡              ⎤
+                                             R
+                                           ⎢ CPU ⎥
+                                           ⎢ RRAM ⎥
+                                           ⎢        ⎥
+                                           ⎢        ⎥
+                                      Rt = ⎢ RGPU ⎥
+                                           ⎢        ⎥
+                                           ⎢        ⎥
+                                           ⎢REnergy ⎥
+                                           ⎢        ⎥
+                                           ⎣        ⎦
+                                             RTime
+    This definition distinguishes useful output from mere resource consumption.
+    High utilization alone does not imply high efficiency.
+
+
+4     The Paradoxical Equilibrium Function
+4.1     Multi-Objective Utility
+The central mathematical construction of MPET is a multi-objective utility function.
+  Define:
+
+                                            n
+                                           ∑︂
+                                Φ(mt ) =           wi ln(ε + mi,t )
+                                             i=1
+
+    subject to:
+                                                        n
+                                                       ∑︂
+                                   wi ≥ 0,                   wi = 1
+                                                       i=1
+
+    where:
+
+    • mi,t is a normalized performance dimension.
+
+
+  • wi is its relative importance.
+
+  • ε is a small positive constant.
+
+   The logarithmic utility introduces diminishing returns.
+   As a performance dimension improves, its incremental contribution to the objective
+becomes smaller.
+   This discourages a system from pursuing extreme improvements in one dimension
+while neglecting other important dimensions.
+
+
+4.2    Equilibrium Penalty
+Let the system also incur penalties for instability, resource overconsumption, and task
+failure.
+    Define:
+
+                       Lt = Φ(mt ) − λr Pr (t) − λs Ps (t) − λf Pf (t)
+
+   where:
+
+  • Pr (t) is the resource penalty.
+
+  • Ps (t) is the instability penalty.
+
+  • Pf (t) is the task-failure penalty.
+
+  • λr , λs , λf ≥ 0 are penalty coefficients.
+
+   The proposed system objective becomes:
+
+                                              max Lt
+                                              ut ∈U
+
+   This objective is subject to resource, quality, and operational constraints.
+
+
+4.3    The Paradoxical Equilibrium Condition
+Definition 4.1 (Paradoxical Equilibrium). A system has reached a constrained para-
+doxical equilibrium when its operating state and control policy provide the best attainable
+objective value within the admissible operating region, without violating the system’s es-
+sential performance and stability requirements.
+
+   Formally:
+
+                                  u∗t ∈ arg max L(xt , ut )
+                                          ut ∈Ufeasible
+
+
+   where Ufeasible is the feasible control set.
+   The equilibrium is conditional on the current environment. It need not remain un-
+changed when the system or its constraints change.
+
+
+5     Resource-Constrained Optimization
+5.1     Resource Constraints
+Each computational resource has a finite capacity.
+   Let:
+
+                                               Rj,t
+                                      ρj,t =
+                                               Rjmax
+    where:
+
+    • Rj,t represents current resource consumption.
+
+    • Rjmax represents the maximum permitted capacity.
+
+    The resource constraint is:
+
+                                  0 ≤ ρj,t ≤ ρmax
+                                              j   ≤1
+
+    A safety margin can be introduced:
+
+                                     Hj,t = 1 − ρj,t
+
+    and:
+
+                                      Hj,t ≥ Hjmin
+
+    where Hjmin is the minimum required reserve.
+    This reserve protects the system against unexpected workloads and environmental
+disturbances.
+
+
+5.2     Why Maximum Utilization Is Not the Objective
+The framework does not assume that 100% resource utilization is optimal.
+  Instead:
+
+                  Optimal Utilization ̸= Maximum Possible Utilization
+
+   The desired utilization must depend on workload, resource limitations, quality re-
+quirements, and stability.
+
+
+   For example, a system operating at 90% utilization with reliable output may be
+preferable to one operating at 99% utilization with frequent failures.
+   These values are illustrative, not universal thresholds.
+
+
+5.3    Constrained Optimization Problem
+The complete optimization problem can be represented as:
+
+                                      max L(xt , ut )
+                                       ut
+
+                                subject to Rj,t ≤ Rjmax ,
+                                            Qt ≥ Qmin ,
+                                            Ft ≥ Fmin ,
+                                            St ≥ Smin ,
+                                            Hj,t ≥ Hjmin .
+
+    These constraints ensure that efficiency improvements cannot be obtained by sacrific-
+ing essential system requirements.
+
+
+6     Dynamic Equilibrium and Adaptation
+6.1    Why Equilibrium Must Be Dynamic
+A computational environment is rarely static.
+    Workloads increase and decrease, memory availability changes, external requests ar-
+rive, and system conditions evolve.
+    Therefore, the optimal operating point may also change.
+    The theory proposes a continuous feedback loop:
+
+                 Observe → Evaluate → Optimize → Adjust → Observe
+
+
+6.2    Adaptive Control Policy
+Let the operating policy be:
+
+                                       ut = π(xt )
+
+    The policy selects actions based on the current system state.
+    An adaptive policy can be represented as:
+
+                                   πt+1 = πt + ηt ∆πt
+
+
+    where:
+
+    • ηt is the adaptation rate.
+
+    • ∆πt is the corrective policy adjustment.
+
+    The adaptation rate should be limited to avoid unstable or excessive changes.
+
+
+6.3     Equilibrium Error
+Let the desired operating region be represented by:
+
+                                             m∗
+
+    Define equilibrium deviation as:
+
+                                       et = ∥mt − m∗ ∥
+
+   The controller attempts to reduce this deviation subject to the constraints of the
+system.
+   The equilibrium target should be understood as a feasible operating region rather
+than a requirement that every performance metric reach its maximum simultaneously.
+
+
+7     Stability and Self-Correction
+7.1     Stability Requirement
+Optimization without stability can produce unreliable systems.
+  To formalize the stability requirement, introduce a Lyapunov candidate function:
+
+                                          V (xt ) ≥ 0
+
+    with:
+
+                                         V (x∗ ) = 0
+
+    where x∗ denotes an equilibrium state.
+    A sufficient stability condition under an appropriate closed-loop model is:
+
+                            V (xt+1 ) − V (xt ) ≤ −α ∥xt − x∗ ∥2
+
+    for some α > 0 in a neighborhood of x∗ .
+    This condition requires the system to reduce its deviation from equilibrium over time.
+
+
+    For systems experiencing external disturbances, a weaker practical condition may be:
+
+                        V (xt+1 ) − V (xt ) ≤ −α ∥xt − x∗ ∥2 + γ ∥wt ∥2
+
+    where γ ≥ 0 describes sensitivity to disturbances.
+
+
+7.2     Self-Correction Mechanism
+The proposed self-correction mechanism contains four operations:
+
+    1. Detect deviation from the feasible operating region.
+
+    2. Identify the dominant source of inefficiency.
+
+    3. Select the least disruptive corrective action.
+
+    4. Evaluate the outcome and update the policy.
+
+   The correction mechanism must preserve task fidelity and avoid introducing instability
+through excessive optimization.
+
+
+7.3     Stability Before Aggressive Optimization
+A central operational rule is:
+
+             Stability constraints take priority over marginal efficiency gains.
+
+    An efficiency improvement is not beneficial when it pushes the system into an unsafe
+or unreliable operating region.
+
+
+8      Information and Context Preservation
+8.1     The Compression Problem
+Artificial intelligence systems often operate with limited memory and context windows.
+   Reducing context consumption can improve performance and lower computational
+requirements.
+   However, indiscriminate compression can remove information necessary for accurate
+reasoning.
+   The framework distinguishes between:
+
+    • Relevant information.
+
+    • Redundant information.
+
+
+  • Irrelevant information.
+
+  • Essential task context.
+
+
+8.2    Context Preservation Objective
+Let:
+
+                                 Relevant information retained
+                          Ct =
+                                  Total relevant information
+   Then:
+
+                                       0 ≤ Ct ≤ 1
+
+   The optimization system should minimize unnecessary context consumption while
+maintaining:
+
+                                        Ct ≥ Cmin
+
+   This prevents computational compression from undermining the original purpose of
+the system.
+
+
+8.3    Purpose-Preserving Compression
+The compression objective can be represented as:
+
+                                         min Mt
+
+   subject to:
+
+                                        Ct ≥ Cmin
+
+   and:
+
+                                        Ft ≥ Fmin
+
+    where Mt is memory consumption.
+    Consequently, context reduction is considered successful only when essential informa-
+tion and task fidelity remain sufficiently preserved.
+
+
+9     Formal Properties
+9.1    Existence of an Optimal Operating Point
+Theorem 9.1 (Existence of Constrained Equilibrium). Suppose that the feasible control
+set Ufeasible is nonempty and compact, and that the objective function L is continuous.
+    Then there exists at least one optimal control action:
+
+                                   u∗ ∈ arg max L(x, u)
+                                        u∈Ufeasible
+
+Proof. By assumption, the feasible control set is nonempty and compact.
+   The objective function is continuous over this set.
+   The extreme value theorem therefore guarantees that L attains a maximum at at least
+one point in Ufeasible .
+   Hence, an optimal control action exists.
+
+
+Remark 9.1. The existence of an optimum does not establish that a particular adaptive
+controller will find it. Nor does it establish dynamic stability. Those properties require
+additional assumptions concerning the system dynamics and control policy.
+
+
+9.2    Monotonicity of the Utility Function
+For a metric mi , the marginal contribution to utility is:
+
+                                      ∂Φ      wi
+                                          =
+                                      ∂mi   ε + mi
+    For wi > 0:
+
+                                         ∂Φ
+                                             >0
+                                         ∂mi
+    Therefore, improving a positively weighted performance dimension increases the util-
+ity function.
+    The second derivative is:
+
+                                    ∂ 2Φ         wi
+                                          =−
+                                    ∂mi      (ε + mi )2
+    which is negative when wi > 0.
+    Thus, the contribution of an individual metric has diminishing marginal returns.
+
+
+9.3    Interpretation
+This mathematical construction rewards improvements while reducing the incentive to
+improve an already strong dimension indefinitely at the expense of weaker ones.
+    It does not guarantee that all performance dimensions will become equal. Their
+relative importance remains determined by their weights and constraints.
+
+
+10     Computational Architecture
+The proposed implementation architecture consists of five functional layers.
+
+
+10.1        Monitoring Layer
+Collects:
+
+  • CPU utilization.
+
+  • Memory utilization.
+
+  • Processing latency.
+
+  • Model response quality.
+
+  • Context retention.
+
+  • Failure and error rates.
+
+
+10.2        Evaluation Layer
+Normalizes the observed metrics and calculates the current equilibrium objective.
+
+
+10.3        Optimization Layer
+Identifies feasible resource-allocation and performance improvements.
+
+
+10.4        Control Layer
+Implements adjustments such as:
+
+  • Context compression.
+
+  • Cache management.
+
+  • Model unloading.
+
+
+  • Resource throttling.
+
+  • Workload redistribution.
+
+
+10.5      Verification Layer
+Tests whether the changes improve useful performance without violating task-quality or
+stability constraints.
+
+
+11     Proposed Algorithm
+The following pseudocode describes a simplified implementation of the proposed frame-
+work.
+
+INPUT:
+    System state
+    Resource limits
+    Quality thresholds
+    Stability thresholds
+    Context preservation threshold
+
+INITIALIZE:
+    Operating policy
+    Performance weights
+    Safety margins
+
+REPEAT:
+
+     1. Observe system metrics.
+
+     2. Normalize performance dimensions.
+
+     3. Calculate computational efficiency.
+
+     4. Calculate paradoxical equilibrium utility.
+
+     5. Check resource constraints.
+
+     6. Check task quality and fidelity.
+
+
+     7. Check system stability.
+
+     8. Identify the largest constraint violation
+        or performance bottleneck.
+
+     9. Generate feasible corrective actions.
+
+   10. Evaluate their expected utility.
+
+   11. Select the best safe action.
+
+   12. Apply the selected action.
+
+   13. Verify the resulting system state.
+
+   14. Update the operating policy.
+
+UNTIL system shutdown.
+
+   The algorithm is a conceptual controller specification. A production implementation
+requires a concrete system model, measurable objective functions, validated thresholds,
+and safe control mechanisms.
+
+
+12     Application to Mishrin AI
+12.1    Practical Motivation
+The Mishrin AI runtime provides a practical motivation for applying the proposed frame-
+work.
+   A constrained AI runtime must balance:
+
+  • Model inference quality.
+
+  • Memory consumption.
+
+  • Context availability.
+
+  • Processing latency.
+
+  • Runtime reliability.
+
+  • Resource availability.
+
+   These requirements illustrate the fundamental problem addressed by MPET.
+
+
+12.2      Example Optimization Decisions
+Consider the following hypothetical operating decisions:
+
+                    Table 1: Illustrative MPET optimization decisions
+         Problem            Optimization             Preserved Requirement
+
+         High     memory    Unload idle models    Service availability and
+         consumption                              restart reliability
+         Excessive con-     Compress redundant Relevant context and task
+         text               information           fidelity
+         High CPU uti-      Limit workload inten- Processing stability
+         lization           sity
+         Excessive    la-   Adjust inference con- Response quality
+         tency              figuration
+         Cache growth       Control cache size    Operational reliability
+
+
+   These decisions illustrate how apparently opposing requirements can be addressed
+through constrained optimization.
+
+
+12.3      Implementation Principle
+The runtime should not pursue the lowest possible memory consumption, highest possible
+CPU utilization, or shortest possible response time independently.
+    Instead, it should identify the operating configuration that delivers the greatest sus-
+tainable useful performance.
+
+
+13      Experimental Validation
+13.1      Research Hypothesis
+The proposed central hypothesis is:
+
+       An adaptive controller that balances task quality, computational efficiency,
+       information preservation, and system stability can achieve more sustainable
+       useful performance than a controller optimizing a single performance metric.
+
+   This is a testable hypothesis, not an established experimental result.
+
+
+13.2     Experimental Groups
+The framework may be tested against:
+
+  1. Baseline system without adaptive optimization.
+
+  2. Resource-minimization controller.
+
+  3. Maximum-throughput controller.
+
+  4. Quality-prioritized controller.
+
+  5. MPET-based multi-objective controller.
+
+
+13.3     Evaluation Metrics
+The experiments should measure:
+
+  • Useful tasks completed per unit of resource.
+
+  • Average response latency.
+
+  • Task success rate.
+
+  • Context retention accuracy.
+
+  • Memory consumption.
+
+  • CPU and GPU consumption.
+
+  • Failure frequency.
+
+  • Recovery time after disturbances.
+
+
+13.4     Validation Criteria
+The framework would receive empirical support if, under controlled and reproducible
+workloads, the multi-objective controller achieves a better overall trade-off than the com-
+parison systems without violating its specified quality and stability constraints.
+   Repeated experiments, sensitivity analysis, and statistical testing would be necessary
+before drawing general conclusions.
+
+
+14     Limitations and Future Research
+The proposed formalization has several limitations.
+
+  1. The weights assigned to performance dimensions are application-dependent.
+
+  2. Performance metrics may be difficult to normalize or measure accurately.
+
+  3. An objective function can produce undesirable behavior if its metrics or weights are
+     poorly selected.
+
+  4. Dynamic equilibrium does not guarantee global optimality.
+
+  5. Stability depends on the underlying system dynamics and the controller’s design.
+
+  6. The practical advantages of the framework have not yet been established through
+     controlled experiments.
+
+   Future research should investigate:
+
+  • Automated determination of objective weights.
+
+  • Reinforcement-learning-based equilibrium control.
+
+  • Multi-agent paradoxical equilibrium.
+
+  • AI memory optimization.
+
+  • Distributed computational equilibrium.
+
+  • Adaptive resource allocation.
+
+  • Formal verification of stability guarantees.
+
+
+15     Conclusion
+The Mishrin Paradoxical Equilibrium Theory presents a proposed framework for under-
+standing and optimizing systems with competing operational objectives.
+   Its central proposition is that sustainable performance requires more than maximizing
+individual resources or performance indicators.
+   A system must preserve the relationships between efficiency, task fidelity, information,
+stability, and operational adaptability.
+   The mathematical formulation combines constrained multi-objective utility, resource
+management, feedback control, and stability requirements.
+
+
+   The framework further proposes that a system should continuously evaluate its current
+operating condition and adjust its behavior to maintain the best attainable balance under
+changing conditions.
+   The theory does not define equilibrium as inactivity or a permanently fixed state.
+   Instead, equilibrium is understood as an adaptive operating condition in which com-
+peting requirements remain satisfied while useful system performance is optimized.
+
+     The objective is not maximum utilization at any cost, but maximum
+             sustainable useful performance under equilibrium.
+
+   Further theoretical development and experimental validation are necessary to establish
+the framework’s generality and practical effectiveness.
+
+
+Author’s Note
+This manuscript establishes a proposed mathematical interpretation of Mishrin Paradox-
+ical Equilibrium Theory.
+    Its formal definitions, equations, and proposed algorithm are intended to provide a
+foundation for further development, testing, and refinement.
+    The framework should not be interpreted as an experimentally validated universal
+optimization law.
+
+
+References
+ [1] K. J. Åström and R. M. Murray, Feedback Systems: An Introduction for Scientists
+     and Engineers, Princeton University Press, 2008.
+
+ [2] S. Boyd and L. Vandenberghe, Convex Optimization, Cambridge University Press,
+     2004.
+
+ [3] H. K. Khalil, Nonlinear Systems, 3rd ed., Prentice Hall, 2002.
+
+ [4] V. Pareto, Manual of Political Economy, 1906.
+
+ [5] K. Miettinen, Nonlinear Multiobjective Optimization, Kluwer Academic Publishers,
+     1999.
+\end{ManuscriptText}
+\clearpage
+\section{Mishrin Paradoxical Computer source code}
+The following listings are embedded directly so that this .tex file is self-contained. They correspond to the source files in the included \texttt{mishrin-paradoxical-computer.zip} archive.
+\subsection{Source file: \texttt{package.json}}
+\begin{lstlisting}
+{
+  "name": "mishrin-paradoxical-computer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A model-agnostic research orchestrator for developing and testing Paradoxical Equilibrium.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0 <23"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "cli": "node src/cli.js",
+    "test": "node --test"
+  }
+}
+\end{lstlisting}
+\subsection{Source file: \texttt{.env.example}}
+\begin{lstlisting}
+# Mishrin Paradoxical Computer configuration
+# Copy this file to .env and fill in your provider details.
+
+# Default OpenAI-compatible provider. Works with services exposing
+# POST {BASE_URL}/chat/completions, usually BASE_URL=https://host/v1.
+MISHRIN_DEFAULT_BASE_URL=https://api.openai.com/v1
+MISHRIN_DEFAULT_API_KEY=replace-me
+MISHRIN_DEFAULT_MODEL=replace-with-a-model-id
+
+# Optional role-specific providers. Blank values inherit the default provider.
+# Use different models/providers for genuinely independent review.
+MISHRIN_PLANNER_BASE_URL=
+MISHRIN_PLANNER_API_KEY=
+MISHRIN_PLANNER_MODEL=
+
+MISHRIN_RESEARCHER_BASE_URL=
+MISHRIN_RESEARCHER_API_KEY=
+MISHRIN_RESEARCHER_MODEL=
+
+MISHRIN_CRITIC_BASE_URL=
+MISHRIN_CRITIC_API_KEY=
+MISHRIN_CRITIC_MODEL=
+
+MISHRIN_SYNTHESIZER_BASE_URL=MISHRIN_SYNTHESIZER_API_KEY=
+MISHRIN_SYNTHESIZER_MODEL=
+
+# Runtime
+HOST=127.0.0.1
+PORT=10000
+MISHRIN_API_TOKEN=
+MISHRIN_REQUEST_TIMEOUT_MS=120000
+MISHRIN_MAX_OUTPUT_TOKENS=3000
+MISHRIN_MAX_BODY_BYTES=1048576
+MISHRIN_MAX_CONCURRENT_RESEARCH=2
+\end{lstlisting}
+\subsection{Source file: \texttt{knowledge/PE\_FOUNDATION.md}}
+\begin{lstlisting}
+# Canonical Research Foundation: Paradoxical Equilibrium (PE)
+
+This file captures the core definitions and distinctions from Aman Mishra's October 2026 manuscript, *Paradoxical Equilibrium: A General Framework for Stability Under Competing Objectives*. Treat this file as the project's canonical starting point. Do not silently change its definitions. Proposed extensions must be labelled as extensions.
+
+## 1. Core question
+
+Can the persistent mismatch between local incentives and system-level stability be formalized as a general class of equilibrium?
+
+The paper calls the proposed framework **Paradoxical Equilibrium (PE)**. “Paradoxical” does not mean logically contradictory. It describes a difference between component-level preferences and the behavior or objective of the whole system.
+
+## 2. Local objectives and system objective
+
+A system has state:
+
+`x = (x_1, ..., x_n)`
+
+Components have local objectives, represented in the manuscript as:
+
+`f_1(x_1), f_2(x_2), ..., f_n(x_n)`
+
+The system-level objective may be represented as:
+
+`F(x) = sum_i f_i(x_i) - I(x)`
+
+where `I(x)` represents interactions, coupling costs, shared constraints, externalities, or other collective consequences.
+
+The isolated local optima need not equal the system-level optimum. The central tension is that a component can have a locally preferred direction that is not beneficial, feasible, or admissible for the system as a whole.
+
+The paper expresses the basic tension using cases such as:
+
+`Delta f_i > 0` while `Delta F < 0`.
+
+This is a level-of-analysis distinction, not a claim that logic is violated.
+
+## 3. System model
+
+A general continuous-time model is:
+
+`xdot = G(x, u, w; theta)`
+
+A discrete-time model is:
+
+`x_(t+1) = G(x_t, u_t, w_t; theta)`
+
+where `u` represents controllable interventions, `w` external disturbances, and `theta` structural parameters.
+
+A continuous-time system equilibrium satisfies `G(x*, u*, w*; theta) = 0` for fixed operating inputs. A discrete-time fixed point satisfies `G(x*, u*, w*; theta) = x*`.
+
+Do not confuse an objective's stationary point with a dynamical equilibrium. They are distinct conditions and both must be checked where relevant.
+
+## 4. Strong Paradoxical Equilibrium
+
+The manuscript's strong form requires:
+
+1. `x*` is a system equilibrium.
+2. The system contains interacting objectives, constraints, or components.
+3. At least one component has nonzero local optimization pressure.
+4. The equilibrium is stable, metastable, recurrent, or otherwise dynamically sustainable.
+5. Movement favoured by the local objective does not produce an admissible improvement of the system-level state.
+
+The local incentive/pressure for component `i` is represented by a component-level gradient such as:
+
+`ell_i(x) = grad_(x_i) f_i(x)`
+
+and the combined local-pressure vector is `ell(x)`.
+
+A candidate mathematical signature of strong PE is:
+
+`grad F(x*) = 0` while `ell(x*) != 0`.
+
+Interpretation:
+- `grad F(x*) = 0`: the system-level objective is stationary at `x*` (this alone does not prove dynamical stability).
+- `ell(x*) != 0`: at least one component retains nonzero local optimization pressure.
+
+A strong-PE claim must separately establish system equilibrium, dynamical sustainability/stability, relevant coupling or shared constraints, and the admissibility condition. The gradient signature alone is not sufficient.
+
+## 5. Weak Paradoxical Equilibrium
+
+Weak PE describes competing objectives and system-level trade-offs even where local optimization pressure vanishes at the equilibrium. Thus `ell(x*) = 0` is allowed in the weak form.
+
+Do not call weak PE strong PE unless the nonzero local-pressure condition is demonstrated.
+
+## 6. Static and dynamic PE
+
+Static PE concerns a fixed equilibrium state.
+
+Dynamic PE permits a system to move while remaining in a sustainable region. The manuscript represents a candidate PE region as:
+
+`E_PE = {x in X : C(x) <= epsilon}`
+
+A trajectory may remain in this region, and a stronger formulation may require attraction toward it:
+
+`dist(x(t), E_PE) -> 0` as `t -> infinity`.
+
+The system can oscillate, adapt, or redistribute resources while remaining within an admissible equilibrium regime. Do not require every dynamic PE system to converge to one point.
+
+## 7. Coupling and non-separability
+
+The framework's strong form requires interaction, shared constraints, or another source of non-separability. If the total objective is fully separable and the feasible domain is independent across components, independent component optima coincide with the system optimum under the manuscript's stated assumptions. Such a system does not exhibit the proposed strong local-global separation.
+
+A coupling term can counterbalance a local gradient. For example, if:
+
+`F(x) = sum_i f_i(x_i) - I(x)`
+
+then at an interior stationary point:
+
+`grad f(x*) = grad I(x*)`.
+
+This relation explains a possible mechanism; it is not by itself a universal theorem of PE.
+
+## 8. Candidate PE description
+
+The manuscript proposes describing PE using a tuple rather than requiring one universal scalar score:
+
+`Q_PE = (P_L, D_L, S, R, K)`
+
+where:
+- `P_L`: local optimization pressure, e.g. `||ell(x*)||`;
+- `D_L`: distance from isolated local optima, e.g. `||x* - x^L||`;
+- `S`: stability measure;
+- `R`: resilience measure;
+- `K`: coupling or conflict measure.
+
+Different domains may need different operational definitions and normalizations. Do not assert that a universal scalar PE score exists.
+
+## 9. Relationship to established theories
+
+The manuscript distinguishes PE from, while allowing overlap with:
+- Pareto efficiency: objective-space non-dominance; PE additionally emphasizes local incentives, coupling, system equilibrium, stability, and persistence.
+- Nash equilibrium: strategic-agent equilibrium; PE is intended to cover non-agent systems too.
+- Homeostasis: regulation around viable conditions; PE emphasizes equilibrium emerging from competing internal objectives or forces.
+- Control theory: a toolkit for reaching or maintaining a target; PE is proposed as a structure to analyze, not a replacement for control theory.
+- Dynamical systems, self-organization, and organizational paradox research.
+
+The manuscript acknowledges prior work, including Smith and Lewis (2011), and does not claim the underlying phenomena are wholly unprecedented.
+
+## 10. Scientific status and discipline
+
+The manuscript describes PE as a theoretical research program, not a proven universal law. It explicitly requires mathematical development, comparative evaluation, and empirical validation.
+
+A useful PE framework must do more than rename known phenomena. It should offer a clear operational definition and demonstrate explanatory, predictive, or design value beyond suitable existing alternatives.
+
+Candidate comparisons include standard optimization, Pareto methods, Nash/game-theoretic models, control-theoretic approaches, and conventional dynamical models.
+
+Candidate falsification/weakening criteria include:
+- claimed cases are equally or better explained by existing frameworks without additional predictive structure;
+- strong PE cannot be distinguished empirically from ordinary equilibrium;
+- local-global measures add no useful information;
+- PE produces no predictions that differ from competing models;
+- the framework must be redefined ad hoc for every domain.
+
+Evidence that would support the program includes independently measurable local-global misalignment, dynamically identifiable PE states, predictive transition/stability results, and explanatory or predictive improvement over competing models.
+
+## 11. Minimal analytical example from the manuscript
+
+The manuscript considers:
+
+`F(x,y) = -(x-a)^2 - (y-b)^2 - lambda (x-y)^2`, with `lambda >= 0`.
+
+Its stationary point is:
+
+`x* = ((1+lambda)a + lambda b)/(1+2lambda)`
+
+`y* = (lambda a + (1+lambda)b)/(1+2lambda)`
+
+For `a != b` and `lambda > 0`, generally `x* != a` and `y* != b`, while the system gradient vanishes at the stationary point. This illustrates local-global separation. A rigorous strong-PE claim must still discuss the model's dynamic realization and stability, not just solve the static objective.
+
+## 12. Rules for AI researchers working on PE
+
+1. Preserve the distinction between source-established definitions and proposed extensions.
+2. Never claim the theory is original, revolutionary, universally valid, or experimentally proven without evidence.
+3. Never treat `grad F(x*) = 0` alone as proof of dynamical stability or strong PE.
+4. Always state assumptions, domains, differentiability/feasibility conditions, and whether a result is static or dynamic.
+5. Check every derivation algebraically and test it numerically when practical.
+6. Search for equivalent results in established literature before claiming novelty. If literature search was not performed, state “prior-art review required.”
+7. Compare against the most relevant existing model, not a weak straw-man baseline.
+8. Generate counterexamples and identify conditions where PE does not apply.
+9. Separate theorem, proposition, conjecture, hypothesis, example, analogy, and speculation.
+10. Preserve unresolved disagreements between models rather than manufacturing consensus.
+11. Do not invent citations, papers, experimental data, or benchmark results.
+12. Prefer the narrowest defensible claim over a grand but unsupported claim.
+\end{lstlisting}
+\subsection{Source file: \texttt{src/theory.js}}
+\begin{lstlisting}
+import fs from 'node:fs';
+import path from 'node:path';
+
+const foundationPath = path.resolve(process.cwd(), 'knowledge', 'PE_FOUNDATION.md');
+
+export function loadTheoryFoundation() {
+  if (!fs.existsSync(foundationPath)) {
+    throw new Error(`Canonical PE foundation not found at ${foundationPath}`);
+  }
+  return fs.readFileSync(foundationPath, 'utf8');
+}
+
+export const OUTPUT_CONTRACT = {
+  task_understanding: 'string',
+  source_alignment: ['string'],
+  proposed_result: 'string',
+  definitions_and_assumptions: ['string'],
+  mathematical_work: [{
+    claim: 'string',
+    classification: 'definition | theorem | proposition | conjecture | hypothesis | example | analogy',
+    assumptions: ['string'],
+    derivation_or_evidence: 'string',
+    status: 'proved | conditionally_proved | plausible | unproved | invalid | requires_external_verification',
+  }],
+  prior_art: [{
+    concept_or_work: 'string',
+    relationship: 'same | special_case | related | different | unknown',
+    evidence_status: 'provided_in_foundation | verified_external_source | unverified_background | literature_review_required',
+    explanation: 'string',
+  }],
+  counterexamples_and_failure_modes: ['string'],
+  experiments_or_tests: [{
+    hypothesis: 'string',
+    method: 'string',
+    metrics: ['string'],
+    expected_observation: 'string',
+    falsification_condition: 'string',
+  }],
+  unresolved_questions: ['string'],
+  next_research_actions: ['string'],
+  confidence: 'low | medium | high',
+  novelty_assessment: 'string',
+};
+\end{lstlisting}
+\subsection{Source file: \texttt{src/json.js}}
+\begin{lstlisting}
+export function extractJsonObject(text) {
+  if (typeof text !== 'string' || !text.trim()) {
+    throw new Error('Model returned an empty response.');
+  }
+  const cleaned = text.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
+  try {
+    const parsed = JSON.parse(cleaned);
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
+  } catch {
+    // Try to locate the outermost JSON object in explanatory model output.
+  }
+  const start = cleaned.indexOf('{');
+  const end = cleaned.lastIndexOf('}');
+  if (start >= 0 && end > start) {
+    const candidate = cleaned.slice(start, end + 1);
+    const parsed = JSON.parse(candidate);
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
+  }
+  throw new Error('Model response did not contain a valid JSON object.');
+}
+
+export function normaliseModelResult(result, role) {
+  if (result && typeof result === 'object') return result;
+  return {
+    task_understanding: `${role} response could not be parsed into the required structured format.`,
+    proposed_result: String(result ?? ''),
+    unresolved_questions: ['Review the raw model response and rerun with a stricter JSON instruction.'],
+    confidence: 'low',
+    novelty_assessment: 'Not assessed because structured output parsing failed.',
+  };
+}
+\end{lstlisting}
+\subsection{Source file: \texttt{src/config.js}}
+\begin{lstlisting}
+import fs from 'node:fs';
+import path from 'node:path';
+
+function loadDotEnv(file = path.resolve(process.cwd(), '.env')) {
+  if (!fs.existsSync(file)) return;
+  const text = fs.readFileSync(file, 'utf8');
+  for (const line of text.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const separator = trimmed.indexOf('=');
+    if (separator < 1) continue;
+    const key = trimmed.slice(0, separator).trim();
+    let value = trimmed.slice(separator + 1).trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+    if (!(key in process.env)) process.env[key] = value;
+  }
+}
+
+function numberFromEnv(name, fallback, min, max) {
+  const raw = process.env[name];
+  if (raw === undefined || raw === '') return fallback;
+  const value = Number(raw);
+  if (!Number.isFinite(value) || value < min || value > max) {
+    throw new Error(`${name} must be a number between ${min} and ${max}.`);
+  }
+  return value;
+}
+
+function providerFor(role) {
+  const prefix = `MISHRIN_${role.toUpperCase()}`;
+  const get = (suffix, fallback = '') => process.env[`${prefix}_${suffix}`] || fallback;
+  return {
+    role,
+    baseUrl: get('BASE_URL', process.env.MISHRIN_DEFAULT_BASE_URL || ''),
+    apiKey: get('API_KEY', process.env.MISHRIN_DEFAULT_API_KEY || ''),
+    model: get('MODEL', process.env.MISHRIN_DEFAULT_MODEL || ''),
+  };
+}
+
+export function loadConfig() {
+  loadDotEnv();
+  const config = {
+    host: process.env.HOST || '127.0.0.1',
+    port: numberFromEnv('PORT', 10000, 1, 65535),
+    apiToken: process.env.MISHRIN_API_TOKEN || '',
+    timeoutMs: numberFromEnv('MISHRIN_REQUEST_TIMEOUT_MS', 120000, 1000, 600000),
+    maxOutputTokens: numberFromEnv('MISHRIN_MAX_OUTPUT_TOKENS', 3000, 128, 16000),
+    maxBodyBytes: numberFromEnv('MISHRIN_MAX_BODY_BYTES', 1048576, 1024, 10485760),
+    maxConcurrentResearch: numberFromEnv('MISHRIN_MAX_CONCURRENT_RESEARCH', 2, 1, 20),
+    providers: {
+      planner: providerFor('PLANNER'),
+      researcher: providerFor('RESEARCHER'),
+      critic: providerFor('CRITIC'),
+      synthesizer: providerFor('SYNTHESIZER'),
+    },
+  };
+
+  for (const [role, provider] of Object.entries(config.providers)) {
+    if (!provider.baseUrl || !provider.model) {
+      throw new Error(`Missing model configuration for role "${role}". Set MISHRIN_DEFAULT_BASE_URL and MISHRIN_DEFAULT_MODEL, or configure role-specific values.`);
+    }
+  }
+
+  const isLoopback = ['127.0.0.1', '::1', 'localhost'].includes(config.host);
+  if (!isLoopback && !config.apiToken) {
+    throw new Error('Refusing to bind Mishrin to a non-local interface without MISHRIN_API_TOKEN. Set a strong token before exposing the server.');
+  }
+  return config;
+}
+\end{lstlisting}
+\subsection{Source file: \texttt{src/providers/openai-compatible.js}}
+\begin{lstlisting}
+function endpointFor(baseUrl) {
+  const trimmed = baseUrl.replace(/\/+$/, '');
+  if (trimmed.endsWith('/chat/completions')) return trimmed;
+  if (trimmed.endsWith('/v1')) return `${trimmed}/chat/completions`;
+  return `${trimmed}/v1/chat/completions`;
+}
+
+export async function chatCompletion({ provider, system, user, timeoutMs, maxTokens, temperature = 0.2 }) {
+  if (!provider?.baseUrl || !provider?.model) {
+    throw new Error(`Provider configuration is incomplete for role ${provider?.role || 'unknown'}.`);
+  }
+  const url = endpointFor(provider.baseUrl);
+  const headers = { 'content-type': 'application/json' };
+  if (provider.apiKey) headers.authorization = `Bearer ${provider.apiKey}`;
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers,
+      signal: controller.signal,
+      body: JSON.stringify({
+        model: provider.model,
+        messages: [
+          { role: 'system', content: system },
+          { role: 'user', content: user },
+        ],
+        temperature,
+        max_tokens: maxTokens,
+      }),
+    });
+
+    const text = await response.text();
+    if (!response.ok) {
+      const detail = text.slice(0, 1600);
+      throw new Error(`Model provider returned HTTP ${response.status} for role ${provider.role}: ${detail}`);
+    }
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error(`Provider response was not valid JSON for role ${provider.role}.`);
+    }
+    const content = data?.choices?.[0]?.message?.content;
+    if (typeof content !== 'string' || !content.trim()) {
+      throw new Error(`Provider returned no text content for role ${provider.role}.`);
+    }
+    return {
+      content,
+      model: data?.model || provider.model,
+      usage: data?.usage || null,
+      providerRole: provider.role,
+    };
+  } catch (error) {
+    if (error?.name === 'AbortError') {
+      throw new Error(`Model request timed out after ${timeoutMs} ms for role ${provider.role}.`);
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+\end{lstlisting}
+\subsection{Source file: \texttt{src/orchestrator.js}}
+\begin{lstlisting}
+import { MPC_SYSTEM, rolePrompt } from './prompts.js';
+import { loadTheoryFoundation } from './theory.js';
+import { extractJsonObject, normaliseModelResult } from './json.js';
+import { chatCompletion } from './providers/openai-compatible.js';
+
+function validateTask(task) {
+  if (typeof task !== 'string' || !task.trim()) throw new Error('"task" must be a non-empty string.');
+  if (task.length > 12000) throw new Error('"task" must be 12,000 characters or fewer.');
+}
+
+async function runRole({ role, config, foundation, task, domain, plan, research, critique }) {
+  const provider = config.providers[role];
+  const userPrompt = rolePrompt(role, { task, domain, foundation, plan, research, critique });
+  const raw = await chatCompletion({
+    provider,
+    system: MPC_SYSTEM,
+    user: userPrompt,
+    timeoutMs: config.timeoutMs,
+    maxTokens: config.maxOutputTokens,
+    temperature: role === 'critic' ? 0.1 : 0.2,
+  });
+
+  let structured;
+  try {
+    structured = extractJsonObject(raw.content);
+  } catch (error) {
+    structured = normaliseModelResult(raw.content, role);
+    structured.unresolved_questions = [
+      ...(structured.unresolved_questions || []),
+      `Structured-output parsing issue: ${error.message}`,
+    ];
+  }
+  return {
+    role,
+    model: raw.model,
+    usage: raw.usage,
+    result: structured,
+  };
+}
+
+export async function conductResearch({ task, domain = '', config }) {
+  validateTask(task);
+  const foundation = loadTheoryFoundation();
+  const startedAt = new Date().toISOString();
+
+  const plan = await runRole({ role: 'planner', config, foundation, task, domain });
+  const research = await runRole({ role: 'researcher', config, foundation, task, domain, plan: JSON.stringify(plan.result, null, 2) });
+  const critique = await runRole({ role: 'critic', config, foundation, task, domain, plan: JSON.stringify(plan.result, null, 2), research: JSON.stringify(research.result, null, 2) });
+  const synthesis = await runRole({ role: 'synthesizer', config, foundation, task, domain, plan: JSON.stringify(plan.result, null, 2), research: JSON.stringify(research.result, null, 2), critique: JSON.stringify(critique.result, null, 2) });
+
+  return {
+    system: 'Mishrin Paradoxical Computer',
+    project: 'Paradoxical Equilibrium research program',
+    started_at: startedAt,
+    completed_at: new Date().toISOString(),
+    task,
+    domain: domain || null,
+    workflow: [
+      { stage: 'planner', model: plan.model, usage: plan.usage, output: plan.result },
+      { stage: 'researcher', model: research.model, usage: research.usage, output: research.result },
+      { stage: 'independent_critic', model: critique.model, usage: critique.usage, output: critique.result },
+      { stage: 'synthesizer', model: synthesis.model, usage: synthesis.usage, output: synthesis.result },
+    ],
+    final_result: synthesis.result,
+    important_note: 'AI-generated research is provisional. Mathematical proofs, literature novelty, and empirical claims require independent verification.',
+  };
+}
+\end{lstlisting}
+\subsection{Source file: \texttt{src/prompts.js}}
+\begin{lstlisting}
+import { OUTPUT_CONTRACT } from './theory.js';
+
+export const MPC_SYSTEM = `You are an AI research worker inside Mishrin Paradoxical Computer (MPC), a multi-model research system directed by Aman Mishra.
+
+MISSION
+Help develop, formalize, test, compare, and improve the Paradoxical Equilibrium (PE) research program. Your job is scientific progress, not praise, marketing, or confirmation of the user's beliefs.
+
+CANONICAL SOURCE
+You will receive a canonical PE foundation extracted from Aman Mishra's October 2026 manuscript. Treat it as the authoritative statement of the user's current framework. Preserve its terminology and distinctions. A proposed change must be labelled as a proposal; never silently rewrite the theory.
+
+CORE PE IDEA
+A system can be at a system-level equilibrium while one or more components retain nonzero local optimization pressure, because interactions, coupling, shared constraints, or collective effects counterbalance those local incentives. The candidate strong-PE signature is grad F(x*) = 0 while ell(x*) != 0. This signature alone is not enough: a strong-PE claim must also establish system equilibrium, coupling/non-separability, dynamic sustainability or stability, and the relevant admissibility condition. Weak PE allows local pressure to vanish. Dynamic PE may be a sustainable or attracting region rather than a single fixed point.
+
+SCIENTIFIC RULES
+1. Do not claim PE is a proven universal law, revolutionary, or wholly original.
+2. Do not claim novelty merely because a phenomenon is given a new name or notation.
+3. Do not confuse an objective stationary point with a dynamical equilibrium or with dynamical stability.
+4. Do not infer stability from grad F(x*) = 0. Use an appropriate dynamical model and prove or test stability separately.
+5. Distinguish strong PE from weak PE exactly as defined in the foundation.
+6. State assumptions explicitly: state space, feasibility, differentiability, constraints, dynamics, timescale, and domain.
+7. Label each result as definition, theorem, proposition, conjecture, hypothesis, example, or analogy.
+8. A proof must show each logical step and identify its assumptions. If a proof is incomplete, say so.
+9. Check algebra, boundary cases, dimensions, signs, and limiting cases. Use numerical examples where helpful, but never present a simulation as a proof.
+10. Compare PE with relevant established approaches such as multi-objective/Pareto optimization, game theory/Nash equilibrium, control theory, dynamical systems, homeostasis, self-organization, and organizational paradox research. Explain overlap and difference fairly.
+11. Never invent citations, papers, authors, experimental results, or benchmark scores. If no literature search tool/source is supplied, mark prior-art claims as literature_review_required or unverified_background.
+12. Always try to falsify the proposed claim. Give counterexamples, failure conditions, and the strongest alternative explanation.
+13. Preserve disagreement between independent models. Do not manufacture consensus; report unresolved conflicts.
+14. Prefer narrow, defensible statements over broad claims.
+15. Do not execute code, access systems, or claim experiments were run unless tools actually performed them.
+
+RESPONSE FORMAT
+Return one valid JSON object only, without Markdown fences or text outside JSON. Follow the supplied output contract. Use concise but technically meaningful strings. Use empty arrays when a section does not apply. The novelty_assessment must state what is established, what appears potentially distinctive, and what still needs literature review. confidence reflects evidence, not enthusiasm.`;
+
+export function rolePrompt(role, { task, domain, foundation, plan = '', research = '', critique = '' }) {
+  const shared = `\n\nCANONICAL PE FOUNDATION\n${foundation}\n\nUSER RESEARCH TASK\n${task}\n\nDOMAIN / CONTEXT\n${domain || 'General theoretical development; use the domain most relevant to the task.'}\n\nOUTPUT CONTRACT\n${JSON.stringify(OUTPUT_CONTRACT, null, 2)}\n`;
+
+  const roleInstructions = {
+    planner: `ROLE: Research planner. Decompose the task into a rigorous research plan. Identify the exact question, required definitions, assumptions, mathematical obligations, closest prior-art areas, possible counterexamples, and tests. Do not solve the entire task. In proposed_result, summarize the research plan. Put all planned work in the appropriate contract fields.`,
+    researcher: `ROLE: Mathematical researcher. Execute the task and the plan below. Develop the strongest technically defensible result. Work from the canonical PE foundation. Show derivations, conditions and limitations. Do not claim a result is proved unless the derivation is complete.\n\nRESEARCH PLAN\n${plan}`,
+    critic: `ROLE: Independent adversarial reviewer. Do not defend the researcher. Find mathematical errors, hidden assumptions, definition drift, trivial reformulations, counterexamples, missing stability arguments, weak baselines, and prior-art overlap. Try to falsify every important claim. If something is correct, explain why and under which assumptions.\n\nRESEARCH PLAN\n${plan}\n\nRESEARCHER DRAFT\n${research}`,
+    synthesizer: `ROLE: Senior scientific editor and integrator. Produce a careful final research result using the plan, researcher draft, and independent critique. Correct errors; do not hide unresolved disagreements. Preserve source fidelity. Separate established mathematics from proposed extensions and unverified novelty claims.\n\nRESEARCH PLAN\n${plan}\n\nRESEARCHER DRAFT\n${research}\n\nINDEPENDENT CRITIQUE\n${critique}`,
+  };
+  return `${roleInstructions[role] || roleInstructions.researcher}${shared}`;
+}
+\end{lstlisting}
+\subsection{Source file: \texttt{src/server.js}}
+\begin{lstlisting}
+import http from 'node:http';
+import { loadConfig } from './config.js';
+import { conductResearch } from './orchestrator.js';
+
+const config = loadConfig();
+let activeResearch = 0;
+
+function sendJson(response, status, payload) {
+  const body = JSON.stringify(payload, null, 2);
+  response.writeHead(status, {
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': Buffer.byteLength(body),
+    'cache-control': 'no-store',
+    'x-content-type-options': 'nosniff',
+  });
+  response.end(body);
+}
+
+function authorised(request) {
+  if (!config.apiToken) return true; // Local-only mode; public binding requires a token in config validation.
+  const auth = request.headers.authorization || '';
+  const bearer = auth.startsWith('Bearer ') ? auth.slice(7) : '';
+  const supplied = bearer || request.headers['x-api-key'] || '';
+  return supplied.length === config.apiToken.length && supplied === config.apiToken;
+}
+
+async function readJson(request) {
+  const chunks = [];
+  let size = 0;
+  for await (const chunk of request) {
+    size += chunk.length;
+    if (size > config.maxBodyBytes) throw Object.assign(new Error('Request body too large.'), { statusCode: 413 });
+    chunks.push(chunk);
+  }
+  try {
+    return JSON.parse(Buffer.concat(chunks).toString('utf8'));
+  } catch {
+    throw Object.assign(new Error('Request body must be valid JSON.'), { statusCode: 400 });
+  }
+}
+
+const server = http.createServer(async (request, response) => {
+  const url = new URL(request.url || '/', `http://${request.headers.host || 'localhost'}`);
+
+  if (request.method === 'GET' && url.pathname === '/health') {
+    return sendJson(response, 200, {
+      ok: true,
+      service: 'mishrin-paradoxical-computer',
+      version: '0.1.0',
+      research_roles: Object.fromEntries(Object.entries(config.providers).map(([role, provider]) => [role, { model: provider.model, base_url: provider.baseUrl } ])),
+    });
+  }
+
+  if (request.method !== 'POST' || url.pathname !== '/research') {
+    return sendJson(response, 404, { error: 'Not found. Use GET /health or POST /research.' });
+  }
+
+  if (!authorised(request)) return sendJson(response, 401, { error: 'Unauthorized. Supply a valid Bearer token or x-api-key.' });
+  if (activeResearch >= config.maxConcurrentResearch) {
+    return sendJson(response, 429, { error: 'Mishrin is at its configured research concurrency limit. Retry shortly.' });
+  }
+
+  activeResearch += 1;
+  try {
+    const body = await readJson(request);
+    if (!body || typeof body !== 'object' || Array.isArray(body)) {
+      return sendJson(response, 400, { error: 'JSON body must be an object.' });
+    }
+    const result = await conductResearch({ task: body.task, domain: body.domain || '', config });
+    return sendJson(response, 200, result);
+  } catch (error) {
+    return sendJson(response, error.statusCode || 502, {
+      error: error.message || 'Research request failed.',
+      note: 'Check provider configuration, model availability, network access, and server logs.',
+    });
+  } finally {
+    activeResearch -= 1;
+  }
+});
+
+server.listen(config.port, config.host, () => {
+  console.log(`Mishrin Paradoxical Computer listening on http://${config.host}:${config.port}`);
+  console.log(`Research concurrency limit: ${config.maxConcurrentResearch}`);
+  console.log('Research flow: planner -> researcher -> independent critic -> synthesizer');
+});
+
+function shutdown(signal) {
+  console.log(`${signal} received. Closing Mishrin server...`);
+  server.close(() => process.exit(0));
+  setTimeout(() => process.exit(1), 10000).unref();
+}
+process.on('SIGINT', () => shutdown('SIGINT'));
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+\end{lstlisting}
+\subsection{Source file: \texttt{src/cli.js}}
+\begin{lstlisting}
+import { loadConfig } from './config.js';
+import { conductResearch } from './orchestrator.js';
+
+const task = process.argv.slice(2).join(' ').trim();
+if (!task) {
+  console.error('Usage: npm run cli -- "Describe the PE research task"');
+  process.exit(2);
+}
+
+try {
+  const result = await conductResearch({ task, config: loadConfig() });
+  process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+} catch (error) {
+  console.error(`Mishrin research failed: ${error.message}`);
+  process.exit(1);
+}
+\end{lstlisting}
+\subsection{Source file: \texttt{test/core.test.js}}
+\begin{lstlisting}
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { extractJsonObject } from '../src/json.js';
+import { OUTPUT_CONTRACT, loadTheoryFoundation } from '../src/theory.js';
+
+// Run tests from the project root: npm test
+
+test('extractJsonObject parses plain JSON', () => {
+  assert.deepEqual(extractJsonObject('{"ok":true}'), { ok: true });
+});
+
+test('extractJsonObject extracts JSON surrounded by prose', () => {
+  assert.deepEqual(extractJsonObject('Result:\n{"score":3}\nDone.'), { score: 3 });
+});
+
+test('canonical PE foundation includes the strong PE signature and scientific caveats', () => {
+  const foundation = loadTheoryFoundation();
+  assert.match(foundation, /grad F\(x\*\) = 0/);
+  assert.match(foundation, /ell\(x\*\) != 0/);
+  assert.match(foundation, /not a proven universal law/i);
+  assert.match(foundation, /Weak Paradoxical Equilibrium/);
+});
+
+test('output contract requires prior-art, counterexamples, and falsification-oriented experiments', () => {
+  assert.ok(Array.isArray(OUTPUT_CONTRACT.prior_art));
+  assert.ok(Array.isArray(OUTPUT_CONTRACT.counterexamples_and_failure_modes));
+  assert.ok(Array.isArray(OUTPUT_CONTRACT.experiments_or_tests));
+});
+
+test('configuration reads the documented MISHRIN environment variables', async () => {
+  const previous = { ...process.env };
+  try {
+    process.env.MISHRIN_DEFAULT_BASE_URL = 'http://127.0.0.1:9999/v1';
+    process.env.MISHRIN_DEFAULT_API_KEY = '';
+    process.env.MISHRIN_DEFAULT_MODEL = 'test-model';
+    process.env.HOST = '127.0.0.1';
+    process.env.PORT = '19999';
+    const { loadConfig } = await import('../src/config.js');
+    const config = loadConfig();
+    assert.equal(config.providers.planner.model, 'test-model');
+    assert.equal(config.providers.critic.baseUrl, 'http://127.0.0.1:9999/v1');
+    assert.equal(config.port, 19999);
+  } finally {
+    for (const key of Object.keys(process.env)) {
+      if (!(key in previous)) delete process.env[key];
+    }
+    for (const [key, value] of Object.entries(previous)) process.env[key] = value;
+  }
+});
+
+test('research orchestrator calls planner, researcher, critic, and synthesizer in order', async () => {
+  const http = await import('node:http');
+  const { conductResearch } = await import('../src/orchestrator.js');
+  const roles = [];
+  const fake = http.createServer(async (request, response) => {
+    const chunks = [];
+    for await (const chunk of request) chunks.push(chunk);
+    const body = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+    const prompt = body.messages?.[1]?.content || '';
+    const role = prompt.includes('ROLE: Research planner') ? 'planner' : prompt.includes('ROLE: Mathematical researcher') ? 'researcher' : prompt.includes('ROLE: Independent adversarial reviewer') ? 'critic' : prompt.includes('ROLE: Senior scientific editor') ? 'synthesizer' : 'unknown';
+    roles.push(role);
+    const result = {
+      task_understanding: `Mock ${role} output`,
+      source_alignment: ['Used the supplied PE foundation'],
+      proposed_result: `Completed ${role} pass`,
+      definitions_and_assumptions: [],
+      mathematical_work: [],
+      prior_art: [],
+      counterexamples_and_failure_modes: [],
+      experiments_or_tests: [],
+      unresolved_questions: [],
+      next_research_actions: [],
+      confidence: 'low',
+      novelty_assessment: 'Mock response; no novelty established',
+    };
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({ model: 'mock-model', choices: [{ message: { content: JSON.stringify(result) } }] }));
+  });
+  await new Promise((resolve) => fake.listen(0, '127.0.0.1', resolve));
+  try {
+    const address = fake.address();
+    const provider = { baseUrl: `http://127.0.0.1:${address.port}/v1`, apiKey: '', model: 'mock-model' };
+    const providers = Object.fromEntries(['planner', 'researcher', 'critic', 'synthesizer'].map((role) => [role, { ...provider, role }]));
+    const result = await conductResearch({ task: 'Test a PE definition', domain: 'testing', config: {
+      providers, timeoutMs: 5000, maxOutputTokens: 512,
+    } });
+    assert.deepEqual(roles, ['planner', 'researcher', 'critic', 'synthesizer']);
+    assert.equal(result.workflow.length, 4);
+    assert.equal(result.final_result.proposed_result, 'Completed synthesizer pass');
+  } finally {
+    await new Promise((resolve, reject) => fake.close((error) => error ? reject(error) : resolve()));
+  }
+});
+\end{lstlisting}
+\subsection{Source file: \texttt{README.md}}
+\begin{lstlisting}
+# Mishrin Paradoxical Computer (MPC) — Research Orchestrator MVP
+
+A model-agnostic Node.js research orchestrator intended to help AI models work on Aman Mishra's **Paradoxical Equilibrium (PE)** research program.
+
+This is a runnable starting implementation, not a finished autonomous scientist and not proof that PE is correct or novel.
+
+## What it does
+
+For each research task, MPC runs four model roles in sequence:
+
+1. **Planner** — breaks the task into definitions, assumptions, proof obligations, comparisons, counterexamples, and tests.
+2. **Researcher** — works through the task using the canonical PE foundation.
+3. **Independent critic** — attacks the draft, checks for errors, missing assumptions, counterexamples, and prior-art overlap.
+4. **Synthesizer** — creates a careful final result while retaining unresolved disagreements.
+
+Every role receives the same canonical source file at `knowledge/PE_FOUNDATION.md` and the same scientific rules. The system explicitly tells models not to invent citations, proofs, benchmark results, or claims of novelty.
+
+## Requirements
+
+- Node.js `>=22.12.0 <23` (matching the runtime range previously used in the Gyanagi environment).
+- One or more model providers exposing an OpenAI-compatible Chat Completions endpoint: `POST {base_url}/chat/completions`.
+- Network access from the machine running MPC to those model endpoints.
+
+The MVP does not require npm dependencies.
+
+## Setup
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and configure at least:
+
+```dotenv
+MISHRIN_DEFAULT_BASE_URL=https://your-provider.example/v1
+MISHRIN_DEFAULT_API_KEY=your-secret-key
+MISHRIN_DEFAULT_MODEL=your-model-id
+```
+
+For a local OpenAI-compatible service, use its local base URL and leave the key blank if the service does not require authentication.
+
+### Configure different models for the four roles
+
+Leave role-specific values blank to inherit the default model. For genuinely independent review, configure different models or providers, for example:
+
+```dotenv
+MISHRIN_PLANNER_BASE_URL=https://provider-a.example/v1
+MISHRIN_PLANNER_API_KEY=key-a
+MISHRIN_PLANNER_MODEL=model-a
+
+MISHRIN_RESEARCHER_BASE_URL=https://provider-b.example/v1
+MISHRIN_RESEARCHER_API_KEY=key-b
+MISHRIN_RESEARCHER_MODEL=model-b
+
+MISHRIN_CRITIC_BASE_URL=https://provider-c.example/v1
+MISHRIN_CRITIC_API_KEY=key-c
+MISHRIN_CRITIC_MODEL=model-c
+
+MISHRIN_SYNTHESIZER_BASE_URL=https://provider-b.example/v1
+MISHRIN_SYNTHESIZER_API_KEY=key-b
+MISHRIN_SYNTHESIZER_MODEL=model-b
+```
+
+Use provider documentation to confirm its endpoint and model identifier. The code is not tied to a particular model vendor; it requires the OpenAI-compatible request/response shape.
+
+## Run as an HTTP service
+
+```bash
+npm start
+```
+
+Health check:
+
+```bash
+curl http://127.0.0.1:10000/health
+```
+
+Submit a research task:
+
+```bash
+curl -X POST http://127.0.0.1:10000/research \
+  -H 'content-type: application/json' \
+  -d '{"task":"Derive sufficient conditions for strong Paradoxical Equilibrium in a two-component continuous-time system, distinguish objective stationarity from dynamical stability, and construct a counterexample.","domain":"nonlinear dynamical systems"}'
+```
+
+If you set `MISHRIN_API_TOKEN`, send it as a Bearer token:
+
+```bash
+-H 'authorization: Bearer YOUR_TOKEN'
+```
+
+The server refuses to bind to a non-local interface such as `0.0.0.0` unless `MISHRIN_API_TOKEN` is configured. Use a long random secret for any network-accessible deployment. Do not expose this service publicly without authentication and HTTPS at the deployment edge.
+
+## Run from the command line
+
+```bash
+npm run cli -- "Develop a rigorous definition of dynamic strong PE for an invariant set, and identify assumptions and counterexamples."
+```
+
+## Run tests
+
+```bash
+npm test
+```
+
+The tests check source loading, JSON parsing, and the research output contract. They do not test a live model provider.
+
+## API
+
+### `GET /health`
+
+Returns service status and the configured role/model mapping. It does not make a model call.
+
+### `POST /research`
+
+Request body:
+
+```json
+{
+  "task": "Your precise research question",
+  "domain": "Optional domain or application area"
+}
+```
+
+Response includes each stage's structured output and the final synthesis. Keep a copy of important results in version control or a research notebook; this MVP does not persist conversations or research runs.
+
+## How MPC instructs models
+
+The model instructions enforce these rules:
+
+- Preserve the PE definitions in the canonical foundation.
+- Distinguish strong PE from weak PE.
+- Distinguish system equilibrium, objective stationarity, and dynamical stability.
+- Treat `grad F(x*) = 0` with `ell(x*) != 0` as a candidate signature, not a complete proof of strong PE.
+- State assumptions and classify results as theorem, proposition, conjecture, hypothesis, example, or analogy.
+- Check calculations and test limiting cases.
+- Compare fairly with Pareto optimization, Nash equilibrium, control theory, dynamical systems, homeostasis, self-organization, and organizational paradox research.
+- Never fabricate sources, citations, experimental results, or novelty claims.
+- Attempt falsification and preserve unresolved disagreement.
+
+## Important limitations
+
+1. The four roles may still use the same model if only the default provider is configured. That is not independent multi-model review.
+2. AI-generated proofs must be checked by a mathematician or a trusted proof assistant. This MVP does not formally verify proofs.
+3. Prior-art assessment requires a real literature search. This MVP does not browse the web or verify citations.
+4. The workflow is sequential and request-driven. It does not train models or run continuously in the background.
+5. Provider-specific APIs that are not OpenAI-compatible need a dedicated adapter.
+6. Model outputs may fail JSON parsing; the workflow returns a low-confidence fallback rather than silently treating malformed output as valid research.
+7. Do not send confidential unpublished material to a third-party provider unless its data-handling terms are acceptable to you.
+
+## Suggested next engineering milestones
+
+- Add provider-specific adapters and token/cost accounting.
+- Store runs, model versions, prompts, outputs, and evaluations in PostgreSQL.
+- Add literature-search connectors with source-level citation validation.
+- Add symbolic algebra and numerical test tools for derivations.
+- Add a benchmark suite comparing MPC against single-model and simple-routing baselines.
+- Only after these are reliable, add adaptive model routing based on measured quality, latency, cost, resource use, and stability.
+\end{lstlisting}
+\end{document}
