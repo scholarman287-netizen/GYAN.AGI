@@ -1,77 +1,147 @@
 # GYAN.AGI — Mishrin Paradoxical Intelligence & Computational Framework
 
-An AI orchestration and computational optimization research ecosystem by **Aman Mishra (India)**, exploring Paradoxical Equilibrium, multi-model AI collaboration, and token-efficient computing.
+**Paradoxical Equilibrium Theory and the Mishrin computational research ecosystem, created by Aman Mishra (India).** This repository contains theoretical manuscripts and software prototypes for AI orchestration, prompt/context compression, and resource-aware computing.
 
-**Author:** Aman Mishra  
+**Creator:** Aman Mishra  
 **Country:** India  
 **Email:** [scholarman287@gmail.com](mailto:scholarman287@gmail.com)
 
+## GitHub repository description
+
+> Paradoxical Equilibrium Theory, created by Aman Mishra (India), and the Mishrin computational research ecosystem: adaptive AI orchestration, Claude and OpenAI boosters, token/context compression, and resource-aware computing.
+
 ## Overview
 
-This repository documents a connected research direction and its software prototypes. The central question is:
+This repository brings together Aman Mishra's proposed **Paradoxical Equilibrium (PE)** framework, its computational research direction, and software experiments exploring AI model orchestration and efficiency.
 
-> Can an AI system improve collective problem-solving and reliability while minimizing unnecessary computation?
+The central research question is:
 
-The framework combines theoretical work on **Paradoxical Equilibrium (PE)** with three practical projects: Mishrin Paradoxical Computer, Mishrin GPT Booster, and Token Squeezer.
+> Can a system maintain reliable, useful performance by balancing competing objectives rather than maximizing a single metric in isolation?
 
-## Projects
+The documents distinguish the conceptual PE framework from its proposed application to intelligent and computational systems. They are research proposals; their wider explanatory value and practical performance require further analysis and empirical validation.
 
-### Mishrin Paradoxical Computer (MPC)
+## Theory and research manuscripts
 
-A model-agnostic research-orchestration prototype with four sequential roles:
+### 1. Paradoxical Equilibrium: A General Framework for Stability Under Competing Objectives
 
-1. **Planner** — decomposes a task into structured subtasks.
-2. **Researcher** — develops candidate analysis and solutions.
-3. **Independent Critic** — challenges assumptions and looks for weaknesses.
-4. **Synthesizer** — consolidates findings into a structured response.
+**File:** [research/paradoxical-equilibrium-theory.tex](research/paradoxical-equilibrium-theory.tex)
 
-It is intended as a research workflow, not a trained foundation model or a completed autonomous scientist.
+**Creator and author: Aman Mishra.**
 
-### Mishrin GPT Booster — OpenAI adaptation
+This manuscript proposes Paradoxical Equilibrium as a framework for systems whose components experience competing or locally beneficial optimization pressures while the overall system remains stable or dynamically sustainable.
 
-An OpenAI Responses API integration layer with task tiers, configurable models, structured prompts, token budgets, caching, usage tracking and batch execution. It changes API request orchestration; it does not modify GPT model weights or ChatGPT's internal implementation.
+The manuscript develops:
+- Component-level and system-level objective functions.
+- Interaction, coupling and shared-constraint effects.
+- A distinction between ordinary equilibrium and strong Paradoxical Equilibrium.
+- A local-global misalignment measure.
+- Dynamic PE in terms of invariant or attracting regions.
+- Comparisons with Nash equilibrium, Pareto efficiency, homeostasis, control theory, dynamical systems, multi-objective optimization, self-organization and organizational paradox theory.
+
+The paper treats PE as a theoretical research program rather than a proven universal law. Its scientific value depends on further mathematical and empirical work.
+
+**Document provenance:** This .tex file is a machine-readable reconstruction of a supplied 39-page PDF. It preserves extracted manuscript text and section ordering, but is not the original authoring .tex source; mathematical layout and line wrapping may differ from the source PDF.
+
+### 2. Mishrin Paradoxical Equilibrium Theory — Computational Formalization
+
+**File:** [research/paradoxical-equilibrium-computer-code.tex](research/paradoxical-equilibrium-computer-code.tex)
+
+**Creator and author: Aman Mishra.**
+
+This manuscript proposes the application of PE ideas to intelligent and computational systems facing competing objectives such as:
+- Computational efficiency.
+- Operational stability.
+- Task accuracy.
+- Resource conservation.
+- Adaptability.
+- Information and context preservation.
+
+The proposed formalization includes a multi-objective utility function, resource-constrained optimization, an adaptive equilibrium condition and a Lyapunov-based stability requirement. It also discusses a computational architecture with monitoring, evaluation, optimization, control and verification layers; a proposed algorithm; application to Mishrin AI; and experimental validation.
+
+The document states that mathematical properties depend on explicit assumptions and that practical effectiveness requires experimental validation.
+
+**Document provenance:** This is a machine-readable reconstruction of a supplied computational manuscript PDF, combined with source listings from the Mishrin Paradoxical Computer MVP. It is not the original authoring .tex source.
+
+## Software projects currently included
+
+### 3. Token Squeezer
+
+**File:** [projects/token-squeezer.zip](projects/token-squeezer.zip)
+
+A local prompt and context compression utility. Its implementation includes text cleanup, query-aware extractive pruning, input-budget enforcement, response caching and usage statistics.
+
+Compression is not lossless in every mode. Check that essential context, code, equations, source quotations and constraints are preserved. Token savings depend on workload and settings; no fixed reduction is guaranteed.
+
+### 4. Claude Booster
+
+**File:** [projects/claude-booster/claude-booster.js](projects/claude-booster/claude-booster.js)
+
+A Claude Messages API orchestration layer for the Mishrin research workflow. The source includes fast/standard/deep task routing, role-specific output limits, compact inter-stage handoffs, Anthropic prompt caching where model reuse makes it relevant, response caching, bounded-concurrency batches and usage accounting.
+
+The standalone file imports companion modules from ./src/; it therefore requires the matching project source tree to run. It cannot modify Claude model weights.
+
+### 5. Claude Lean
+
+**File:** [projects/claude-lean/claude-lean.js](projects/claude-lean/claude-lean.js)
+
+A single-file, zero-dependency Node.js utility (Node.js 20+) combining local prompt compression, Claude model routing, a daily usage ledger and budget guard, response caching, a reduced one- or two-call MPC research workflow, and an Anthropic-compatible proxy for SDK clients and Claude Code.
+
+It uses heuristic token estimates for planning; the ledger records provider-reported usage. Lossy context pruning can omit information, so use conservative settings for proofs, code and other precision-critical material. The proxy should only be exposed with appropriate network security and credentials.
+
+## Intended unified architecture
+
+The long-term research direction is to combine:
+1. **Token/context optimization** — remove redundancy while preserving task-relevant information.
+2. **Model and task routing** — select a suitable model and workflow for the request and available budget.
+3. **Research orchestration** — plan, investigate, challenge and synthesize complex work.
+4. **Resource-aware control** — balance output quality, reliability, cost, latency, memory and context preservation.
+
+These are currently separate prototypes and documents, not one fully integrated executable platform.
+
+## Installation and usage
+
+Each software project has its own runtime and setup instructions.
 
 ### Token Squeezer
 
-A local text and context-compression utility with cleanup, query-aware pruning, input budgeting, caching and usage statistics. Compression can be lossy, so verify that essential context, equations, code and constraints are preserved.
+Extract the ZIP and follow its included README.md. Run tests and review compression presets before using it on important source material.
 
-**Source archive currently included:** [projects/token-squeezer.zip](projects/token-squeezer.zip)
+### Claude Booster
 
-### Paradoxical Equilibrium Theory
+The single file in this repository depends on companion modules from the matching Claude Booster project. Place it back in that project's source tree and follow that project's setup instructions; the standalone file alone is not a complete runnable package.
 
-A proposed theoretical framework for examining system-level stability amid competing tendencies and objectives. Its generality, novelty and empirical validity remain subjects for further research.
+### Claude Lean
 
-### Paradoxical Equilibrium Computer Code
+Requires Node.js 20 or newer and an Anthropic API key:
 
-A computational formalization associated with the PE research direction, including proposed optimization and stability concepts.
+    export ANTHROPIC_API_KEY="your-api-key"
+    node projects/claude-lean/claude-lean.js plan "Explain the task routing strategy"
+    node projects/claude-lean/claude-lean.js ask "Explain how prompt caching helps"
+    node projects/claude-lean/claude-lean.js stats
 
-## Repository contents
+For research, compression, and proxy commands, consult the usage text in the source file. Do not commit real API keys or populated .env files.
 
-- `README.md` — project and research overview.
-- `projects/token-squeezer.zip` — Token Squeezer source package.
+## Evaluation, limitations and scientific integrity
 
-The GPT Booster and MPC source archives, along with the two standalone LaTeX research manuscripts, are described above but have **not yet been added as repository files**. They should be added as separate source packages in a subsequent commit.
-
-## Unified architectural direction
-
-The intended long-term architecture combines context compression, task/model routing, and multi-stage research orchestration behind one interface. These components are separate prototypes at present; this repository does not claim they are already integrated into one executable service.
-
-## Evaluation and limitations
-
-- Multi-model workflows can increase latency, API cost and total token use.
-- Compression does not guarantee a fixed token-saving percentage and may remove important context.
-- AI criticism does not constitute formal verification or proof checking.
-- Productivity, accuracy, cost and token improvements require controlled benchmarking against a baseline.
-- The software does not retrain or modify commercial model weights.
-- Paradoxical Equilibrium is a proposed research framework, not an established universal scientific law.
+- A multi-stage workflow can improve opportunities for review but may also increase latency, API calls and token use.
+- Prompt compression may be lossy and can reduce answer quality if relevant details are removed.
+- Model routing and output caps trade cost against capability; they do not guarantee a better answer.
+- Provider prompt caching has eligibility and pricing rules that vary by provider and model.
+- AI-generated proofs, citations, novelty assessments and empirical claims require independent verification.
+- The software does not retrain or modify commercial model weights or change the internal implementation of ChatGPT, Claude or other hosted models.
+- Performance and efficiency claims require controlled benchmarks against clear baselines.
+- Paradoxical Equilibrium and Mishrin Paradoxical Equilibrium Theory are proposed research frameworks, not established universal scientific laws.
 
 ## Research objective
 
-Investigate whether collective AI performance, reliability and stability can be improved by balancing competing objectives while controlling computational resources.
+Investigate whether collective system performance and reliability can be sustained by balancing competing objectives while respecting computational, informational and operational constraints.
 
-## Author
+## Creator
 
-**Aman Mishra** — India  
-Email: [scholarman287@gmail.com](mailto:scholarman287@gmail.com)
+**Aman Mishra**  
+India  
+[scholarman287@gmail.com](mailto:scholarman287@gmail.com)
+
+**Paradoxical Equilibrium Theory — created by Aman Mishra.**
 
 **Mishrin — Intelligence through Equilibrium.**
