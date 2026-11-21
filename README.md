@@ -8,7 +8,7 @@
 
 ## GitHub repository description
 
-> Paradoxical Equilibrium Theory, created by Aman Mishra (India), and Mishrin AI efficiency research: model orchestration, Claude optimization, token/context compression, and resource-aware computing.
+> Paradoxical Equilibrium research by Aman Mishra; Mishrin AI orchestration, Claude chat and Claude Code token compression, model routing, and adaptive resource-governance tools.
 
 ## Overview
 
@@ -102,6 +102,49 @@ A single-file, zero-dependency Node.js utility (Node.js 20+) combining local pro
 
 It uses heuristic token estimates for planning; the ledger records provider-reported usage. Lossy context pruning can omit information, so use conservative settings for proofs, code and other precision-critical material. The proxy should only be exposed with appropriate network security and credentials.
 
+### 6. PE Governor — Claude Chat Lean
+
+**File:** [projects/pe-governor.js](projects/pe-governor.js)
+
+A single-file Node.js ES-module prototype (no third-party npm dependencies; Node.js 20+) combining local prompt/context compression with a Claude Messages API client, model-tier routing, usage accounting, caching, a compact Mishrin Paradoxical Computer research workflow, and an Anthropic-compatible local proxy for Claude Code and SDK clients.
+
+Main capabilities:
+- **Local Claude chat helpers:** generate concise profile preferences, pack source files into a paste-ready context block, compress text or documents, and create continuation briefs for starting a fresh chat.
+- **Claude API workflow:** `ask()` compresses and caps context, routes tasks across configurable fast/standard/deep model tiers, caches eligible responses, records provider-reported usage, and enforces a configurable daily budget.
+- **Mishrin research workflow:** `research()` uses a compact PE-specific foundation and a one-stage or researcher-plus-adversarial-review pipeline. The result schema is expanded locally after the model returns compact JSON.
+- **Claude Code proxy:** a local Anthropic-compatible proxy can clean up request text, cap output and thinking budgets, optionally downgrade Opus when budget headroom is low, apply eligible prompt-cache breakpoints, and record usage.
+- **PE Governor telemetry:** reports observed context/output constraints, truncation rate, model downgrades, remaining budget and estimated request runway.
+
+**Important limitations and safety notes:**
+- Token estimates are heuristic and can differ from actual provider tokenization. The usage ledger records provider-reported token counts, but its weighted budget units are not an invoice or exact price calculation.
+- Higher compression levels and query-aware pruning are lossy. Review compressed context before relying on it for code, proofs, equations, safety-critical instructions or precise quotations. No fixed token-saving percentage or quality preservation is guaranteed.
+- Model names, API versions, pricing and provider cache eligibility can change. Check current Anthropic account/API support and override the model environment variables as required.
+- The `strong PE`/`uncoupled` status is a software diagnostic based on the governor's own measurements and classification rules. It is not proof that the general Paradoxical Equilibrium theory is mathematically valid or experimentally established.
+- The proxy's CLI binds to `127.0.0.1`. Keep it local; do not expose it to a public network without adding authentication, transport security and appropriate abuse controls.
+- API calls require an Anthropic API key. Local packing, squeezing and handoff commands do not require model calls.
+
+#### PE Governor quick start
+
+Run the ES-module `.js` file with Node's default-module flag:
+
+```bash
+node --experimental-default-type=module projects/pe-governor.js prefs
+node --experimental-default-type=module projects/pe-governor.js squeeze notes.md --level 2 --budget 1500
+node --experimental-default-type=module projects/pe-governor.js pack src/*.js --query "authentication flow" --budget 4000 --out pack.md
+node --experimental-default-type=module projects/pe-governor.js handoff chat-export.txt --budget 2000 --out brief.md
+```
+
+To run the local proxy, set `ANTHROPIC_API_KEY`, start it in one terminal, then point Claude Code at the loopback address in another:
+
+```bash
+export ANTHROPIC_API_KEY="your-api-key"
+node --experimental-default-type=module projects/pe-governor.js serve --port 8789
+
+# In a second terminal:
+ANTHROPIC_BASE_URL=http://127.0.0.1:8789 claude
+```
+
+The proxy status endpoint is `http://127.0.0.1:8789/gov/status`. Configure model and budget settings with the `LEAN_*` and `GOV_*` environment variables documented in the source's CLI help.
 ## Intended unified architecture
 
 The long-term research direction is to combine:
