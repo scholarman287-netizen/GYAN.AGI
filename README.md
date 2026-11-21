@@ -8,7 +8,7 @@
 
 ## GitHub repository description
 
-> Paradoxical Equilibrium Theory, created by Aman Mishra (India), and the Mishrin computational research ecosystem: adaptive AI orchestration, Claude and OpenAI boosters, token/context compression, and resource-aware computing.
+> Paradoxical Equilibrium Theory, created by Aman Mishra (India), and Mishrin AI efficiency research: model orchestration, Claude optimization, token/context compression, and resource-aware computing.
 
 ## Overview
 
