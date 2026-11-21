@@ -69,6 +69,13 @@ The document states that mathematical properties depend on explicit assumptions 
 An adversarial mathematical review of the PE manuscript, covering the Strong PE signature, definitions, counterexamples, stability, admissibility, comparisons with established frameworks, possible repairs and proposed tests. The report identifies which claims are supported, conditional, unproven, contradicted or undefined.
 
 **Research status:** This is an AI-assisted preliminary analysis, not a peer-reviewed result. Mathematical derivations, literature comparisons and referenced computational outputs require independent verification. The report references a reproducibility script (pe_tests/tests.py); that script is not included in this report upload.
+### 4. Reconstructed Mathematical Theory
+
+**File:** [research/paradoxical-equilibrium-reconstructed-mathematical-theory.md](research/paradoxical-equilibrium-reconstructed-mathematical-theory.md)
+
+A revised mathematical formulation of PE that defines local pressure through the released dynamics after a specified enforcement mechanism is removed. It formalizes admissible constraints, links system objectives to dynamics, distinguishes static and dynamic PE, and proposes an enforcement-failure law with stated assumptions and limitations.
+
+**Research status:** This is a reconstructed theoretical proposal, not an independently validated or peer-reviewed result. Some results rely on standard borrowed mathematics; cited references and the proposed failure-law predictions require independent verification and real-system testing.
 ## Software projects currently included
 
 ### 3. Token Squeezer
