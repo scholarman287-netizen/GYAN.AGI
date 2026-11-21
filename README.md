@@ -62,6 +62,13 @@ The document states that mathematical properties depend on explicit assumptions 
 
 **Document provenance:** This is a machine-readable reconstruction of a supplied computational manuscript PDF, combined with source listings from the Mishrin Paradoxical Computer MVP. It is not the original authoring .tex source.
 
+### 3. Independent Test of Paradoxical Equilibrium Theory
+
+**File:** [research/independent-test-of-paradoxical-equilibrium.md](research/independent-test-of-paradoxical-equilibrium.md)
+
+An adversarial mathematical review of the PE manuscript, covering the Strong PE signature, definitions, counterexamples, stability, admissibility, comparisons with established frameworks, possible repairs and proposed tests. The report identifies which claims are supported, conditional, unproven, contradicted or undefined.
+
+**Research status:** This is an AI-assisted preliminary analysis, not a peer-reviewed result. Mathematical derivations, literature comparisons and referenced computational outputs require independent verification. The report references a reproducibility script (pe_tests/tests.py); that script is not included in this report upload.
 ## Software projects currently included
 
 ### 3. Token Squeezer
