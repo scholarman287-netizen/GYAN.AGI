@@ -1,80 +1,73 @@
 # GYAN.AGI — Mishrin Paradoxical Intelligence & Computational Framework
 
-Mishrin Paradoxical Intelligence & Computational Framework by Aman Mishra (India): Paradoxical Equilibrium research, multi-model AI orchestration, GPT Booster, and Token Squeezer.
-
-## Overview
-
-This repository brings together theoretical research and three related software projects exploring AI orchestration, context compression, and resource-aware computation.
+An AI orchestration and computational optimization research ecosystem by **Aman Mishra (India)**, exploring Paradoxical Equilibrium, multi-model AI collaboration, and token-efficient computing.
 
 **Author:** Aman Mishra  
 **Country:** India  
 **Email:** [scholarman287@gmail.com](mailto:scholarman287@gmail.com)
 
+## Overview
+
+This repository documents a connected research direction and its software prototypes. The central question is:
+
+> Can an AI system improve collective problem-solving and reliability while minimizing unnecessary computation?
+
+The framework combines theoretical work on **Paradoxical Equilibrium (PE)** with three practical projects: Mishrin Paradoxical Computer, Mishrin GPT Booster, and Token Squeezer.
+
 ## Projects
 
-### 1. Mishrin Paradoxical Computer
-A model-agnostic, four-stage research orchestration prototype:
-- **Planner:** decomposes a task into subtasks.
-- **Researcher:** develops candidate analysis and solutions.
-- **Independent critic:** challenges assumptions and looks for weaknesses.
-- **Synthesizer:** consolidates findings into a structured response.
+### Mishrin Paradoxical Computer (MPC)
 
-### 2. Mishrin GPT Booster (OpenAI adaptation)
-An OpenAI Responses API integration layer with task tiers, configurable models, role prompts, token budgets, caching and usage tracking. It changes API request orchestration; it does not modify GPT model weights or ChatGPT's internal implementation.
+A model-agnostic research-orchestration prototype with four sequential roles:
 
-### 3. Token Squeezer
-A local text/context compression and proxy utility with query-aware pruning, input budgeting, caching and usage statistics. Compression can be lossy; verify that essential context, code, equations and constraints are preserved.
+1. **Planner** — decomposes a task into structured subtasks.
+2. **Researcher** — develops candidate analysis and solutions.
+3. **Independent Critic** — challenges assumptions and looks for weaknesses.
+4. **Synthesizer** — consolidates findings into a structured response.
 
-### 4. Paradoxical Equilibrium Theory
-Theoretical research proposing a framework for understanding system-level stability amid competing tendencies and objectives. Its generality and empirical validity remain open research questions.
+It is intended as a research workflow, not a trained foundation model or a completed autonomous scientist.
 
-### 5. Paradoxical Equilibrium Computer Code
-A LaTeX research document containing computational formalization and code-related material associated with the proposed framework.
+### Mishrin GPT Booster — OpenAI adaptation
 
-## Repository layout
+An OpenAI Responses API integration layer with task tiers, configurable models, structured prompts, token budgets, caching, usage tracking and batch execution. It changes API request orchestration; it does not modify GPT model weights or ChatGPT's internal implementation.
 
-```text
-.
-├── README.md
-├── projects/
-│   ├── mishrin-gpt-booster-openai/   # OpenAI API booster source
-│   ├── token-squeezer/               # Compression utility source
-│   └── mishrin-paradoxical-computer/ # Research orchestration source
-└── research/
-    ├── paradoxical-equilibrium-theory.tex
-    └── paradoxical-equilibrium-computer-code.tex
-```
+### Token Squeezer
 
-## Installation
+A local text and context-compression utility with cleanup, query-aware pruning, input budgeting, caching and usage statistics. Compression can be lossy, so verify that essential context, equations, code and constraints are preserved.
 
-Each project is independently packaged and has its own `package.json`, README and environment example. Extract or enter the relevant project directory, install its dependencies, configure environment variables from `.env.example`, then follow its local instructions.
+**Source archive currently included:** [projects/token-squeezer.zip](projects/token-squeezer.zip)
 
-Typical commands (run from an individual project directory):
+### Paradoxical Equilibrium Theory
 
-```bash
-npm install
-npm test
-npm start
-```
+A proposed theoretical framework for examining system-level stability amid competing tendencies and objectives. Its generality, novelty and empirical validity remain subjects for further research.
 
-Check the project-specific README for exact supported Node.js versions and commands. Never commit real API keys or populated `.env` files.
+### Paradoxical Equilibrium Computer Code
 
-## Unified architecture — intended direction
+A computational formalization associated with the PE research direction, including proposed optimization and stability concepts.
 
-The long-term design is to combine local context compression, task/model routing, and multi-stage research orchestration behind one interface. The current packages are separate prototypes; this README does not claim that they are already integrated into one executable service.
+## Repository contents
+
+- `README.md` — project and research overview.
+- `projects/token-squeezer.zip` — Token Squeezer source package.
+
+The GPT Booster and MPC source archives, along with the two standalone LaTeX research manuscripts, are described above but have **not yet been added as repository files**. They should be added as separate source packages in a subsequent commit.
+
+## Unified architectural direction
+
+The intended long-term architecture combines context compression, task/model routing, and multi-stage research orchestration behind one interface. These components are separate prototypes at present; this repository does not claim they are already integrated into one executable service.
 
 ## Evaluation and limitations
 
 - Multi-model workflows can increase latency, API cost and total token use.
 - Compression does not guarantee a fixed token-saving percentage and may remove important context.
 - AI criticism does not constitute formal verification or proof checking.
-- The software does not retrain or modify commercial model weights.
 - Productivity, accuracy, cost and token improvements require controlled benchmarking against a baseline.
+- The software does not retrain or modify commercial model weights.
 - Paradoxical Equilibrium is a proposed research framework, not an established universal scientific law.
 
 ## Research objective
 
-Investigate whether collective AI performance, reliability and system stability can be improved by balancing competing objectives while controlling computational resources.
+Investigate whether collective AI performance, reliability and stability can be improved by balancing competing objectives while controlling computational resources.
 
 ## Author
 
